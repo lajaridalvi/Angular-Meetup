@@ -1,0 +1,110 @@
+.profile-picture {
+  height: 150px;
+}
+.card-content {
+  padding: 2%;
+  text-align: left;
+}
+.margin {
+  margin-top: 20px;
+}
+.form-control {
+  border-radius: 5px;
+}
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  
+  .page-container {
+    font-size: 12px !important;
+  }
+  .profile-image-container {
+    padding: 0.25rem;
+    border-radius: 5px;
+  }
+  .grey-initials {
+    padding-top: 0.9em !important;
+    padding-bottom: 1em !important;
+    width: 120px !important;
+    height: 120px;
+  }
+  .btn-sm {
+    font-size: 0.65rem;
+  }
+  .cards-row {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .profile-picture {
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .show-on-mobile {
+    display: block !important;
+  }
+  .show-on-desktop {
+    display: none !important;
+  }
+  .page-container {
+    font-size: 12px;
+  }
+.joined {
+    font-size: 0.9em;
+    display: none;
+  }
+  .mobile-joined {
+    display: block !important;
+    text-align: center !important;
+  }
+  .btn-sm {
+    font-size: 0.65rem;
+  }
+  .grey-initials {
+    padding-top: 0.7em !important;
+    padding-bottom: 0.7em !important;
+    width: 80px !important;
+    height: 80px;
+  }
+  .btn-sm {
+    font-size: 0.65rem;
+  }
+  .profile-picture {
+    height: 80px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+.joined {
+  margin-top: 90px;
+  font-size: 0.9em;
+  color: #ada7a7;
+}
+.mobile-joined {
+  color: #ada7a7;
+  font-size: 14px;
+}
+.btn-purple {
+  background-color: #e56fcf;
+  color: white;
+}
+.modal-dialog {
+  max-width: 700px;
+}
+.grey-initials {
+  color: #ddd;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+.sort-button {
+    border-radius: 5px;
+}
+.cp {
+  cursor: pointer;
+}

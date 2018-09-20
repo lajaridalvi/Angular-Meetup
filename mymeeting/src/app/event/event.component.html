@@ -1,0 +1,88 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+   
+    <div class="container">
+        <div class="row ">
+          <div id="snackbar"></div>
+          <div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+          <p class="info"> Join new events via invitation email or type the join code  here </p>
+          </div>
+        
+        <!-- show on laptops and desktops -->
+          <div class="row row-1 mt-3 show-on-desktop">
+              <div class=" col-md-8 col-lg-10">
+            <input type="text"[(ngModel)]="joinevent" name="joinevent" placeholder="Join Code">
+            </div>
+            <div class="  col-md-6 col-lg-9">
+            <button class="btn btn-success" (click)="joinEvent()">Join Event</button>
+            </div>
+          </div>
+    
+    
+          </div>
+          <!-- show on mobile and tablets -->
+          <div class="row row-1 margin show-on-mobile">
+              <div class=" col-sm-6 col-md-6 col-lg-6">
+            <input type="text" [(ngModel)]="joinevent" name="joinevent" placeholder="Join Code">
+            </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <button class="btn btn-success" (click)="joinEvent()">Join Event</button>
+            </div>
+          </div>
+        <div class="card mt-3">
+          <div class="container-fluid">
+      <!-- <div class="card-body"> -->
+        <!-- <div class="container"> -->
+          <div class="row create-event-bg">
+            <div class="col-lg-4"></div>
+        <div class="col-lg-4 create-button"><h5 class="card-title"><button class="btn btn-success">  <a class="color" routerLink="/crateevent"> Create my Event </a></button></h5></div>
+            <div class="col-lg-4"></div>
+          </div>   
+                                <div class="row row-1 my-3">
+                                    <div class="col-md-12 text-center">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-success btn-lg active toggle-buttons">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Upcoming
+                                    </label>
+                                    <label class="btn btn-outline-success btn-lg toggle-buttons">
+                                        <input type="radio" name="options" id="option2" autocomplete="off"> Past
+                                    </label>
+                                </div>
+                            </div>         
+                            </div>
+    
+            <br>
+    
+              <div *ngFor="let event of events;" class="row row-1">
+              <div class="col-sm-6 col-md-6 col-lg-6">{{event.event.eventTitle}}</div>
+              
+              <div class="col-sm-6 col-md-3 col-lg-3 offset-md-3">
+                <div class="row margin">
+                  <div class="col">
+                  <button class="btn btn-success btn-sm">
+                    <!-- <a class="color" [routerLink]="['/web/thisEvent', event.event._id]"> -->
+                    <a class="color" (click)="open(event.event._id, event.event.eventTitle, event.event.admin)"> Open</a>
+                  </button>
+                  </div>
+                </div>
+                <!-- {{event.event.admin }} {{ user._id}} -->
+                <div *ngIf="event.event.admin == user._id" class="row margin">
+                  <div class="col">
+                    <!-- <p>{{ event.event.admin}} {{ user._id }}</p> -->
+                    <button class="transparent btn btn-success btn-sm"><a (click)="dashboard(event.event._id, event.event.eventTitle, event.event.admin)">
+                      Dashboard</a>
+                    </button>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+              </div>
+             
+    
+              <img class="img-fluid events-lobby-image mt-3" src="/static/lobby.jpg" alt="" />
+      </div>
+    </div>
+    </div>
+   <app-footerpartial></app-footerpartial>
+    </div>    
+    

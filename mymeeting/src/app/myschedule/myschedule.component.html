@@ -1,0 +1,88 @@
+<div>
+    <app-headerpartial></app-headerpartial>
+
+    <app-event-partial></app-event-partial>
+
+    <div class="container-fluid">
+        <div class="row margin">
+            <div class="col-10 offset-1 px-0">
+                <div class="card pt-3">
+                    <div class="container-fluid">
+                        <div class="row px-3 py-3">
+                            
+                            <div class="col-3 w-no-wrap text-center">
+                               <b> Wednesday </b>
+                            </div>
+
+                            <div class="col-4 w-no-wrap">
+                               <b> October 10th 2018 </b>
+                            </div>
+
+                            <div class="col-5">
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- for loop -->
+                        <div  class="row schedule-row px-3 py-3">
+                            
+                            <div class="col-3 text-center">
+                                <i class="far fa-check-circle"></i>
+                                <i class="fas fa-check-circle"></i>                            
+                            </div>
+
+                            <div class="col-3">
+                                09:15 am - 09:30 am
+                            </div>
+
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-4 text-left">
+                                        <div class="row">
+                                            Alex Winghartem
+                                        </div>
+                                        <div class="row">
+                                            Intern @ Rexa
+                                        </div>
+                                        <div class="row">
+                                            Meeting @ 9.30 am
+                                        </div>
+                                    </div>
+                                    <div class="col-8 profile-img">
+                                        <img class="w-50 rounded-circle img-fluid float-right" src="http://www.gannett-cdn.com/experiments/usatoday/responsive/2017/06/faces-of-pride/assets/img/portraits/14_illinois.jpg" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div  *ngFor="let user of users;" class="row schedule-row px-3 py-3">
+                            
+                            <div class="col-3 text-center">
+                                <i class="far fa-check-circle"></i>
+                                <i class="fas fa-check-circle"></i>                            
+                            </div>
+
+                            <div class="col-3">
+                                09:15 am - 09:30 am
+                            </div>
+
+                            <div class="col-6">
+                                <div class="row">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <input type="text" class="form-control" placeholder="Write a message" />
+                                            <br>
+                                            <button class="btn btn-success form-control">Select Time</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+        </div>
+    </div>
+    <app-footerpartial></app-footerpartial>
+</div>

@@ -1,0 +1,47 @@
+<!-- <div class="signIn"> -->
+  <div class="container-fluid body" style="height: 100vh;">
+     <div id="snackbar"></div>
+     <div class="row">
+     <div class="col-sm-6 offset-sm-3 pd">
+     <h1 class="mt-4"> <i class="fas fa-sign-in-alt"></i> Sign In</h1>
+     <form (ngSubmit)="onsubmit()">
+
+       <div class="form-group">
+         <label>Email</label>
+         <input type="email" class="form-control" name="email" [(ngModel)]="loginuser.email" #email="ngModel" required>
+
+         <!-- <input type ="email" type="email" class="form-control" [(ngModel)]="loginuser.email" #email="ngModel" autocomplete="off" required> -->
+       </div>
+
+       <div class="form-group">
+         <label>Password</label>
+         <input type ="password" name="password" class="form-control" [(ngModel)]="loginuser.password" #password="ngModel" autocomplete="off" required>
+       </div>
+
+       <button type="submit" class="btn btn-warning ">Sign In</button>
+
+     </form>
+    <br>
+    <!-- <button type="button" id="google" class="ant-btn ant-btn-default ant-btn-lg is">
+      <img src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png" class="css-1gscdv">
+      <span> </span>
+      <span>Sign in with Google</span>
+</button> -->
+
+
+    <!-- <button type="button" id="linkedIn" class="ant-btn ant-btn-default ant-btn-lg my">
+                <img src="http://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" class="css-1gscdv">
+                <span> </span>
+                <span>Sign in with LinkedIn</span>
+    </button> -->
+    <hr>
+            <p>Don't have an account?
+                <a [routerLink]="['/sign-up']"  routerLinkActive="active">Sign Up</a>
+            </p>
+            <p>Or go to
+                <a [routerLink]="['/home']" routerLinkActive="active">Home</a>.</p>
+
+  </div>
+  </div>
+    </div>
+  <!-- </div> -->

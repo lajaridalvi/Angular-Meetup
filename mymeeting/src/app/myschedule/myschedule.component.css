@@ -1,0 +1,16 @@
+.margin {
+    margin-top: 20px;
+}
+
+.w-no-wrap {
+    white-space: nowrap;
+}
+@media screen and (max-width: 425px) {
+    .w-no-wrap{
+        font-size: 0.8em;
+    }
+
+}
+.border-margin {
+    border-top: 1px solid #ddd;
+}

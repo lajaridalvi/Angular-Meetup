@@ -1,0 +1,41 @@
+.image-logo{
+    width: 200px;
+    height: 150px;
+    padding: 2%;  
+    border-radius: 18px;
+}
+
+.card {
+    width: 100%;
+}
+.margin {
+    margin-top: 10px;
+}
+.r-margin{
+    margin-right: 1%;
+}
+.add {
+    margin: 0 auto;
+}
+.text{
+    color: #218838;
+}
+@media screen and (max-width:768px){
+    .show-on-mobile {
+        display: block;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+}
+@media screen and (min-width:768px){
+    .hide-on-mobile {
+        display: block;
+    }
+    .show-on-mobile {
+        display: none;
+    }
+}
+.cp{
+    cursor: pointer;
+}

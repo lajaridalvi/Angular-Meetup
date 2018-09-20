@@ -1,0 +1,130 @@
+.app-container {
+    padding: 2% 15% 5% 15%;
+  }
+  
+  @media screen and (max-width: 768px){
+    .app-container {
+    padding: 15% 5% 15%;
+  }
+  }
+  .card {
+    background-color: #fff;
+    padding: 20px 6% 3% 6%;
+    /* margin: 10%; */
+    /* text-align: center; */
+  }
+  
+  .create-event-bg {
+    background-color: #F4FCFD;
+    /* padding: 0; */
+    /* margin-top: 10px;  */
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  .event-actions {
+    text-align: right;
+  }
+  .row-1{
+    text-overflow: unset;
+    flex-wrap: nowrap !important;
+  }
+  .margin{
+    margin-top: 5px;
+  }
+  .btn {
+    border-radius: 5px;
+    /* min-width: 0%; */
+    width:100%;
+    /* padding-left: 4px;
+    padding-right: 4px;
+    font-size: 0.8em; */
+  }
+  .transparent {
+    background-color: transparent;
+    border: 1px solid #28A745;
+    color: #28A745;
+  }
+  
+  .transparent:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .create-button {
+    margin-top: 10px;
+    padding: 3%;
+  }
+  .info {
+    text-align: center;
+    font-size: 0.9em;
+  }
+  .join-events {
+    flex-wrap: nowrap;
+    /* height: 300px;
+    width: 600px; */
+  }
+  .color{
+    color: white;
+  }
+ 
+  @media only screen and (min-width: 992px) {
+    .show-on-mobile{
+      display: none !important
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .show-on-desktop{
+      display: none !important
+    }
+  }
+  hr {
+    width: 100%;
+  }
+  .toggle-buttons {
+    width: 100%;
+  }
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  

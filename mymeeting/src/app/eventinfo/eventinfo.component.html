@@ -1,0 +1,18 @@
+<div>
+    <app-headerpartial></app-headerpartial>
+    <!-- <dashboardPartial></dashboardPartial> -->
+    <app-event-partial></app-event-partial>
+
+<div class="container-fluid">
+    <div class="row margin">
+        <div class="col-12 col-md-10 offset-md-1 px-0">
+            <div class="card space">
+                <span><h3>{{eventDetails.events.eventTitle}}</h3></span>
+                <p *ngIf="eventDetails.events.duration == 1"  class="text">{{ eventDetails.startDate }}</p>
+                <p *ngIf="eventDetails.events.duration != 1"  class="text">{{ eventDetails.startDate }} - {{ eventDetails.toDate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footerpartial></app-footerpartial>
+</div>

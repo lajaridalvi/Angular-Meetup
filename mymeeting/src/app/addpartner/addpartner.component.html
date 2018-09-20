@@ -1,0 +1,95 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+    <app-dashboardpartial></app-dashboardpartial>
+    <!-- <app-event-partial></app-event-partial> -->
+    
+
+
+    <div class="container-fluid">
+      <div class="row margin">
+          <div class="col-12 col-md-10 offset-md-1 px-0">
+          <div class="card card-row">
+              <div class="container-fluid">
+                  <div id="snackbar"></div>
+                    <form (ngSubmit)="onsubmit()">
+                  <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                          <div class="form-group margin">
+                              <label for="logo">Company Name</label>
+                              <input type="text" class="form-control"  name="companyName" [(ngModel)]="partner.companyName" #companyName= "ngModel" placeholder="Company Name" />
+                          </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                          <div class="form-group margin">
+                              <label for="logo">Company URL</label>
+                              <!-- <input type="url" name="companyUrl" pattern="https?://.+" title="Include http://" [(ngModel)]="partner.companyUrl" #companyUrl="ngModel"  placeholder="Company URL"  required> -->
+                              <input type="url" class="form-control" name="companyUrl" [(ngModel)]="partner.companyUrl" #companyUrl="ngModel"  placeholder="Company URL"  required/>
+                          </div>
+                  </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                              <div class="form-group margin">
+                                  <label for="FaceBook">Facebook URL</label>
+                              <input  type="url" class="form-control" name="facebookUrl" [(ngModel)]="partner.facebookUrl" #facebookUrl="ngModel" placeholder="Facebook URL" />
+                          </div>
+                      </div>
+                      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                          <div class="form-group margin">
+                              <label for="Linkdein">LinkedIn URL</label>
+                              <input type="url" class="form-control" name= "linkedinUrl" [(ngModel)]="partner.linkedinUrl" #linkedinUrl="ngModel" placeholder="LinkedIn URL" />
+                          </div>
+                      </div>
+                  </div>
+                           
+                  <div class="row">
+                      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                          <div class="form-group margin">
+                              <label for="Company_code">Company Code</label>
+                              <input type="text" class="form-control" name="companyCode" [(ngModel)]="partner.companyCode" #companyCode="ngModel" placeholder="Company_Code" />
+                          </div>
+                      </div>
+
+                      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                          <div class="form-group margin">
+                              <label for="Twitter">Twitter URL</label>
+                              <input type="url" class="form-control"  name="Twitter" [(ngModel)]="partner.Twitter" #Twitter="ngModel" placeholder="Twitter URL" />
+                          </div>
+                      </div>
+                  </div>
+                           
+
+                          
+
+                      <div class="row">
+                          <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                              <div class="form-group margin">
+                                  <label for="Company_Logo">Company Logo</label>
+                                  <input type="file" id="file"  (change)="uploadFile($event)"/>
+                                  <input type="hidden" id="hiddenfile" name="companyImg" [(ngModel)]="partner.companyImg" #companyImg="ngModel" name="Company_Logo" />
+                              </div>
+                          </div>
+                          <div *ngIf ="partner.companyImg" class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                              <div class="image-preview margin text-center">
+                                  <img class="img-thumbnail" style="height: 100px" [src] = "'http://localhost:3001' + partner.companyImg">
+                              </div> 
+                          </div>
+                      </div>
+
+                  <div class="row">
+                      <button class="btn btn-outline-success add">Submit</button>
+                  </div> 
+     
+              
+                  </form>    
+
+
+              </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  
+      <app-footerpartial></app-footerpartial>
+</div>

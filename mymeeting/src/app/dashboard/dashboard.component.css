@@ -1,0 +1,123 @@
+.center {
+  text-align: center;
+}
+.card {
+  padding: 2%;
+  margin-bottom: 30px;
+}
+.card-row {
+  margin: 0 10%;
+}
+.margin {
+  margin-top: 10px;
+}
+.b-margin {
+  margin-bottom: 10px;
+}
+.page-row {
+  margin: 0 12%;
+  display: block;
+}
+.card-grey {
+  display: block;
+}
+.copy-button {
+  display: block;
+  width: 100%;
+}
+.copy-button:hover {
+  background-color: #00b3b3;
+}
+#inviteCode {
+  text-align: justify;
+}
+textarea {
+  /* border-radius: 5px;
+    align-content: left;
+    overflow: auto; */
+  resize: none;
+  height: 195px;
+  padding: 15px;
+  background-color: #eee;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: "Courier New";
+  font-size: 14px;
+  font-size: 0.875rem;
+  min-height: 6em;
+  text-align: left;
+}
+.nav{
+    display: inline;
+    overflow: auto;
+    white-space: nowrap;
+}
+.nav-link {
+    display: inline;
+}
+.nav::-webkit-scrollbar {
+display: none;
+}
+.pointer{
+    cursor: pointer;
+    color: black;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+.nav {
+  display: inline;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+.nav-link {
+  display: inline;
+  color: black;
+}
+.nav::-webkit-scrollbar {
+  display: none;
+}
+.nav-active {
+  text-decoration: underline !important;
+}

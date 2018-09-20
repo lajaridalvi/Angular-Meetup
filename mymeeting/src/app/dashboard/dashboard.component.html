@@ -1,0 +1,200 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+  <app-dashboardpartial></app-dashboardpartial>
+  <div class="container">
+    <div id="snackbar"></div>
+      
+      <div class="row nav-row">
+          <div class="nav margin b-margin mx-auto">
+              <a id="stats"class="nav-link pointer" (click)="changetab('Statistics')">Statistics</a>
+              <a id="details" class="nav-link pointer" (click)="changetab('Details')">Details</a>
+              <a id="invite" class="nav-link pointer" (click)="changetab('Invitations')">Invitations</a>
+              <a id="partners" class="nav-link pointer"  (click)="changetab('partner')">Partners</a>
+              <!-- <a class="nav-link pointer">Add Event Keys</a> -->
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="selectedTab == 'Statistics'" class="container">
+      <div class="row card-row">
+          <div class="col-lg-6"> 
+              <div class="card">
+                  <div class="card-title">
+                          <h3>{{ eventDetails.usersProfiles.length }}</h3>
+                      Attendees 👩‍💼👨‍💼
+                  </div>
+                  <div class="card-content">
+                      Bring your attendees to Meetup by sharing your invitation 
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="card">
+                  <div class="card-title">
+                      <h3> 1 </h3>
+                      Active this week 🔥
+                  </div>
+                  <div class="card-content">
+                      Bring your attendees to Meetup by sharing your invitation 
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="row card-row">
+          <div class="col-lg-6">
+              <div class="card">
+                  <div class="card-title">
+                      <h3>1</h3>
+                      Accepted Meetings
+                  </div>
+                  <div class="card-content">
+                      Bring your attendees to Meetup by sharing your invitation 
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="card">
+                  <div class="card-title">
+                      <h3>0</h3>
+                      Pending Meetings
+                  </div>
+                  <div class="card-content">
+                      Bring your attendees to Meetup by sharing your invitation 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="selectedTab == 'Details'" class="container">
+     
+      <div class="row page-row">
+          <form>
+              <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="eventName" name="eventName" placeholder="Event Name"/>
+                  <!-- {{eventName.eventTitle}} -->
+              </div>
+              <div class="form-group">
+                  <input type="date" class="form-control" [(ngModel)]="startDate" name="startDate" />
+                  <!-- {{eventDetails.startDate}} -->
+              </div>
+
+              <div class="form-group">
+                    <!-- {{eventDetails.duration}} -->
+                  <select class="form-control" [(ngModel)]="duration" name="duration" id="">
+                      <option value="1"> 1 day </option>
+                      <option value="2"> 2 days </option>
+                      <option value="3"> 3 days </option>
+                      <option value="4"> 4 days </option>
+                      <option value="5"> 5 days </option>
+                      <option value="6"> 6 days </option>
+                      <option value="7"> 7 days </option>
+                  </select>
+              </div>
+
+              <button type="submit" class="btn btn-light copy-button primary b-margin form-control">Save</button>
+          </form>
+      </div>
+  </div>
+
+  <div *ngIf="selectedTab == 'Invitations'" class="container">
+        <!-- {{events.event.eventCode}} -->
+      <div class="row page-row">
+          <p>Share this text with your colleagues or clients to test Muster before upgrading.</p>
+          <div class="form-group" >
+              <textarea class="form-control" id="inviteCode" readonly>
+
+Get valuable connections at  {{eventDetails.eventCode}}
+Start networking with Muster to book face-to-face meetings with other attendees. It’s easy!
+  
+Or, download our app on iOS and Android and use join code e1 to get started.</textarea>
+          </div>
+          <button class="btn btn-light copy-button primary b-margin">Copy</button>
+      </div>
+  </div>
+
+
+<div *ngIf="selectedTab == 'partner'" class="contrainer">
+    <div class="row mt-3">
+        <div class="col-12 col-md-8 offset-md-2 px-0">
+        <div class="card card-row-key">
+            <div class="container-fluid">
+                  <form (ngSubmit)="onsubmit()" class="my-3">
+                <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                        <div class="form-group margin">
+                            <label for="logo">Company Name</label>
+                            <input type="text" class="form-control"  name="companyName" [(ngModel)]="partner.companyName" #companyName= "ngModel" placeholder="Company Name" />
+                        </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                        <div class="form-group margin">
+                            <label for="logo">Company URL</label>
+                            <!-- <input type="url" name="companyUrl" pattern="https?://.+" title="Include http://" [(ngModel)]="partner.companyUrl" #companyUrl="ngModel"  placeholder="Company URL"  required> -->
+                            <input type="url" class="form-control" name="companyUrl" [(ngModel)]="partner.companyUrl" #companyUrl="ngModel"  placeholder="Company URL"  required/>
+                        </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                            <div class="form-group margin">
+                                <label for="FaceBook">Facebook URL</label>
+                            <input  type="url" class="form-control" name="facebookUrl" [(ngModel)]="partner.facebookUrl" #facebookUrl="ngModel" placeholder="Facebook URL" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                        <div class="form-group margin">
+                            <label for="Linkdein">LinkedIn URL</label>
+                            <input type="url" class="form-control" name= "linkedinUrl" [(ngModel)]="partner.linkedinUrl" #linkedinUrl="ngModel" placeholder="LinkedIn URL" />
+                        </div>
+                    </div>
+                </div>
+                         
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                        <div class="form-group margin">
+                            <label for="Company_code">Company Code</label>
+                            <input type="text" class="form-control" name="companyCode" [(ngModel)]="partner.companyCode" #companyCode="ngModel" placeholder="Company_Code" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                        <div class="form-group margin">
+                            <label for="Twitter">Twitter URL</label>
+                            <input type="url" class="form-control"  name="Twitter" [(ngModel)]="partner.Twitter" #Twitter="ngModel" placeholder="Twitter URL" />
+                        </div>
+                    </div>
+                </div>                    
+                 <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                            <div class="form-group margin">
+                                <label for="Company_Logo">Company Logo</label>
+                                <input type="file" id="file"  (change)="uploadFile($event)"/>
+                                <input type="hidden" id="hiddenfile" name="companyImg" [(ngModel)]="partner.companyImg" #companyImg="ngModel" name="Company_Logo" />
+                            </div>
+                        </div>
+                        <div *ngIf ="partner.companyImg" class="col-sm-6 col-md-6 col-lg-6 col-xs-6 text-left">
+                            <div class="image-preview margin text-center">
+                                <img class="img-thumbnail" style="height: 100px" [src] = "'http://localhost:3001' + partner.companyImg">
+                            </div> 
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <button class="btn btn-outline-success add">Submit</button>
+                </div> 
+   
+            
+                </form>    
+
+
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    </div>
+</div>
+<app-footerpartial></app-footerpartial>
+</div>

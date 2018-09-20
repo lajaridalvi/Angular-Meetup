@@ -1,0 +1,35 @@
+.card-content {
+    width: 100%;
+    display: inherit;
+}
+.ul {
+    /* display: inline-flex; */
+    text-align: right;
+    font-size: 0.9em;   
+    display: inherit;
+}
+@media screen and (max-width: 950px){
+
+    .ul {
+        font-size: 0.7em;
+    }
+    .scroll{
+    -webkit-user-select: none;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    }
+}
+.partial-container {
+    margin: 0 auto;
+}
+.nav::-webkit-scrollbar {
+display: none;
+}
+.setting {
+    white-space: nowrap;
+}
+.nav-active {
+    border-bottom: 2px solid #897acc !important;
+}

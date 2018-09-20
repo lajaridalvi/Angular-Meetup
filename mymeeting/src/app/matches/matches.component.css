@@ -1,0 +1,119 @@
+.profile-picture {
+    height: 150px;
+  }
+  .card-content {
+    padding: 2%;
+    text-align: left;
+  }
+  .margin {
+    margin-top: 20px;
+  }
+  .form-control {
+    border-radius: 5px;
+  }
+  @media screen and (min-width: 501px) and (max-width: 768px) {
+  
+    .profile-image-container {
+      padding: 0.25rem;
+      border-radius: 5px;
+    }
+  
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .cards-row {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    
+    .profile-picture {
+      height: 120px;
+    }
+    .grey-initials {
+      padding-top: 0.7em !important;
+      padding-bottom: 0.7em !important;
+      width: 120px !important;
+      height: 120px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+      .show-on-mobile {
+          display: block !important;
+      }
+      .show-on-desktop {
+          display: none !important;
+      }
+      .joined {
+      font-size: 0.9em;
+      display: none;
+    }
+    .mobile-joined {
+      display: block !important;
+    }
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .grey-initials {
+      padding-top: 0.7em !important;
+      padding-bottom: 0.7em !important;
+      width: 80px !important;
+      height: 80px;
+    }
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .profile-picture {
+      height: 80px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .mobile {
+        display: block;
+    }
+    .dp {
+        max-width: 80px;
+    }
+  }
+  .seek {
+    color: #d40daf;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+  .offer {
+    color: #35ad68;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+  .joined {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #ddd;
+  }
+  .btn-purple {
+    background-color: #e56fcf;
+    color: white;
+  }
+  .modal-dialog {
+    max-width: 700px;
+  }
+  .grey-initials {
+    color: #ddd;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .desktop {
+      white-space: nowrap;
+  }
+  .sort-button {
+      border-radius: 5px;
+  }
+  .dp {
+      max-width: 150px;
+  }

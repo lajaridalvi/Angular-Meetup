@@ -1,0 +1,157 @@
+<div>
+    <app-headerpartial></app-headerpartial>
+    <app-event-partial></app-event-partial>
+    <div class="container-fluid">
+            <div id="snackbar"></div>
+
+        <div class="row page-container">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+                <div class="row cards-row margin search-row">
+                    <div class="col-12 col-md-10 offset-md-1 px-0">
+                        <input type="text" class="form-control" placeholder="Search (name, company or title)">
+                    </div>
+                </div>
+
+                <div class="row cards-row margin">
+                    <div class="col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-6 float-left px-0">
+                        <div class="btn-group">
+                          <button class="btn sort-button btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sorted by
+                          </button>
+                          <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button" [routerLink]="['/web/thisEvent']" >All</button>
+                            <button class="dropdown-item" type="button"  [routerLink]="['/web/newest']">Newest</button>
+                            <button class="dropdown-item" type="button" [routerLink]="['/web/matches']">Matches</button>
+                          </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-6 text-right px-0">
+                        <i class="fa fa-filter cp" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"></i> &nbsp; &nbsp;
+                        <span style="cursor:pointer" [routerLink]= "['/web/bookmark']"> Bookmarks </span>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Filter by Seeking/Offering</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="text-left mt-2">
+                                       <b class="title"> </b>
+                                        <hr>
+                                        <div class="row ml-3 mt-2">
+                                            <div class="col-6">
+                                               
+                                            </div>
+
+                                            <div class="col-6 text-right">
+                                                <button class="btn btn-sm btn-purple" data-dismiss="modal">Seeking</button>
+                                                <button class="btn btn-sm btn-success" data-dismiss="modal">Offering</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="modal-body text-left">
+                                    No Event Keys
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin" *ngFor="let eventUser of event.users">
+
+                    <div class="col-12 col-md-10 offset-md-1 px-0 show-on-desktop">
+                        <div class="card cards-row py-3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                <div class="col-md-5 col-5 float-left text-left">
+                                <div class="profile-image-container mr-1">
+                                    <div class="profile-picture img-fluid">
+                                        <h1 class="grey-initials"><b>{{eventUser.user.firstName.charAt(0).toUpperCase()}} </b><b>{{ eventUser.user.lastName.charAt(0).toUpperCase() }}</b></h1>
+                                    </div>
+                                </div>
+                                <div class="profile-image-container mr-1">
+                                    <img class="profile-picture rounded-circle dp" :src="" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-3 text-left">
+                                <p><b>{{ eventUser.user.firstName }} {{ eventUser.user.lastName }} </b></p>
+                                <p>{{ eventUser.user.jobTitle }} @ {{ eventUser.user.companyName }} </p>
+                            </div>
+                            <div class="col-md-4 col-4 text-right float-right">
+                                <p class="cp" (click)="remove(eventUser.user._id)"> Remove <i class="fa fa-trash cp"></i></p>
+                                <p class="cp" (click)="bookmarkuser(eventUser.user._id)"> Bookmark <i  class="fas fa-star cp " *ngIf= "eventUser.isBookmarked"></i><i class="far fa-star cp" *ngIf="!eventUser.isBookmarked" (click)="bookmarkuser(eventUser.user._id)"></i> </p>
+                                <p><button class="btn-sm btn-success">Meet/Chat</button></p>
+                                <p > <button class="btn-sm btn-success">Suggest Meeting</button> </p>
+                               <span class="cp" (click)="viewprofile(eventUser.user._id)" > View Profile <i class="fas fa-arrow-right cp"></i> </span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>  
+                  </div>
+                  <div class="col-12 col-md-10 offset-md-1 px-0 show-on-mobile d-none">
+                    <div class="card cards-row py-3">
+                            <div class="container-fluid">
+                                <div class="row">
+                        
+                            <div class="col-md-4 col-5 float-left text-left">
+                                <div class="profile-image-container mr-1">
+                                    <div class="profile-picture img-fluid">
+                                        <h1 class="grey-initials"><b>{{eventUser.user.firstName.charAt(0).toUpperCase()}} </b><b>{{ eventUser.user.lastName.charAt(0).toUpperCase() }}</b></h1>
+                                    </div>
+                                </div>
+                                <div class="profile-image-container mr-1">
+                                    <img class="profile-picture rounded-circle" :src="" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-5 text-left">
+                                <p><b>{{ eventUser.user.firstName }} {{ eventUser.user.lastName }} </b></p>
+                                <p>{{ eventUser.user.jobTitle }} @ {{ eventUser.user.companyName }} </p>
+                            </div>
+                            <div class="col-md-4 col-2 text-right float-right">
+                                <p class="cp"><i class="fa fa-trash cp" (click)="remove(eventUser.user._id)"></i></p>
+                                <p class="cp"><i  class="fas fa-star cp " *ngIf= "eventUser.isBookmarked" (click)="bookmarkuser(eventUser.user._id)"></i><i class="far fa-star cp" *ngIf="!eventUser.isBookmarked" (click)="bookmarkuser(eventUser.user._id)"></i> </p>
+                               <span class="cp" ><i class="fas fa-arrow-right"  (click)="viewprofile(eventUser.user._id)"></i> </span>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-12 text-center">
+                                  <button class="btn btn-sm btn-success">Meet/Chat</button>
+                                  <button class="btn btn-sm btn-success" >Suggest Meeting</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="row margin" *ngIf="event.users.length == 0"> 
+              <div class="col-12">
+                <h5 class="text-center">No Attendees Found</h5>
+                <p class="text-center" >Invite Attendees</p>
+              </div>
+            </div>
+
+            <div class="row margin mx-1">
+            <div class="col-6 col-md-5 offset-md-1 px-0">
+                <button  class="btn-sm btn-success" >
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+            <div class="col-6 col-md-5 px-0 text-right">
+                <button class="btn-sm btn-success">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>

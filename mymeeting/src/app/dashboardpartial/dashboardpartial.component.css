@@ -1,0 +1,43 @@
+.margin {
+    margin-top: 2.5px;
+    display: inline;
+  }
+  .dash-container {
+    background-color: hsl(180, 100%, 35%);
+  }
+  .btn-light {
+    border-radius: 5px;
+    text-align: center;
+  }
+  .button {
+    border-radius: 5px;
+    text-align: center;
+  }
+  .button:hover {
+    background-color: #eeb902;
+    border-color: #eeb902;
+    color:white;
+  }
+  .dash-row {
+    padding: 0.5%;
+  }
+  .radios {
+    text-align: center;
+  }
+  .btn-group{
+    margin: 5px 0px;
+  }
+  .text-white {
+    color: white;
+  }
+  .color{
+    color: white;
+  }
+  @media (max-width:425px){
+    .show-on-mobile{
+      font-size: small!important;
+      padding: 5px 5px;
+    }
+    
+  }
+  

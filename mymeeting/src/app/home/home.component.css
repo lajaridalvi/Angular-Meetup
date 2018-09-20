@@ -1,0 +1,28 @@
+.flow{
+    height: 37vh;
+}
+.img-fluid{
+    height:30px;
+    width: 40px;
+}
+.text-h1{
+    color: #43D280;
+}
+.sub-title-h4{
+    color: gray;
+}
+.pointer{
+    cursor: pointer;
+}
+@media only screen and (max-width:425px) {
+    h1.show-on-mobile{
+        font-size: 1.3rem;
+        padding: 3 0;
+    } 
+    h4.show-on-mobile{
+        font-size: 1rem;
+        padding: 3 0;
+    }
+   
+
+}

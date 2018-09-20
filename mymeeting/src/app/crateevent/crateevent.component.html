@@ -1,0 +1,59 @@
+<div>
+    <app-headerpartial></app-headerpartial>
+    <div class="container createEvent px-3 pt-3">
+     <div id="snackbar"></div>
+
+        <div class="row">
+        <!-- <div id="snackbar"></div> -->
+            <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12 align-center">
+                <h3> Create your event 👌 </h3>
+                <p>Don’t worry - you can change this information at any time.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12 align-center">
+
+            <form (ngSubmit)="onsubmit()">
+                <div class="form-group">
+                    <label for="Event Title">Event Title</label>
+                    <input type="text" class="form-control" name="eventTitle" [(ngModel)]="event.eventTitle" #eventTitle="ngModel" placeholder="My Event" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Event Description">Event Description</label>
+                    <input type="text" class="form-control" name="eventDesc" [(ngModel)]="event.eventDesc" #eventDesc="ngModel" placeholder="My Event" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Event Code">Event Code</label>
+                    <input type="text" class="form-control" name= "eventCode" [(ngModel)]="event.eventCode" #eventCode="ngModel"  placeholder="Unique Event Code" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Start Date">Start Date</label>
+                    <input type="date" class="form-control" name="startDate" [(ngModel)]="event.startDate" #startDate="ngModel" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Event Title">Event Duration</label>
+                    <select name="duration" class="form-control" name="duration" [(ngModel)]="event.duration" #duration="ngModel" >
+                        <option value="1"> 1 day </option>
+                        <option value="2"> 2 days </option>
+                        <option value="3"> 3 days </option>
+                        <option value="4"> 4 days </option>
+                        <option value="5"> 5 days </option>
+                        <option value="6"> 6 days </option>
+                        <option value="7"> 7 days </option>
+                    </select>
+                </div>
+
+                <button class="btn btn-outline-success w-100" type="submit">Continue</button>
+
+            </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

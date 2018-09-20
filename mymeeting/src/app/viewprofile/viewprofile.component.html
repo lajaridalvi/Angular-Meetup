@@ -1,0 +1,69 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+  <app-dashboardpartial></app-dashboardpartial>
+  <app-event-partial></app-event-partial>
+  <div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-12 col-md-10 offset-md-1 px-0">
+    <div class="card card-row">
+        <div class="container space">
+            <div class="row">
+                <div class="col-md-2 col-lg-2 col-4 float-left ">
+            <img class="image-logo show-on-mobile img-fluid rounded-circle" :src=""/>
+            <img class="image-logo img-fluid rounded-circle img-thumbnail" src="http://profilepicturesdp.com/wp-content/uploads/2018/06/default-profile-picture-transparent-1.png" />
+
+                </div>
+                <div class="col-md-5 col-lg-5 col-4 float-left  show-on-mobile-text show-on-tablet px-0">
+                    <p><b>{{ profileUser.firstName }} {{ profileUser.lastName }} </b></p>
+                    <p >{{ profileUser.jobTitle }} @ {{ profileUser.companyName }}</p>
+
+                </div>
+                <div class="col-md-5 col-lg-5 col-4 float-right show-on-mobile-text text-center">
+                    <p class="cp"><i  class="fas fa-star cp " *ngIf= "profileUser.isBookmarked" (click)="bookmarkuser(profileUser._id)"></i><i class="far fa-star cp" *ngIf="!profileUser.isBookmarked" (click)="bookmarkuser(profileUser._id)"></i> </p>
+                    <!-- <p><i class="far fa-star"></i> Bookmark </p> -->
+                <!-- <p class="joined"> Joined about {{eventData.profileUser.displayTimeFrom }}. </p> -->
+                    <button type="button" class="btn btn-outline-success on-mobile_button">Meet/Chat</button>
+                    <button type="button" class="btn btn-outline-success on-mobile_button">Suggest Meeting</button>
+                </div>
+            </div>
+            <hr>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12 col-md-4">
+                     <ul class="titles">    
+                         <li class="seeking-title"> 
+                             <b> {{profileUser.firstName }} is seeking</b>
+                         <ul class="seekings">
+                           <!-- <li v-for="seeking in eventData.profileUser.seekings" :key="seeking">
+                           {{seeking}}
+                           </li> -->
+                      </ul>
+                     </li>         
+                 </ul>
+      
+            </div>
+            <div class="col-lg-4 col-12 col-md-4 text-left">
+                <ul class="titles">    
+                 <li class="seeking-title"> 
+                     <b> {{ profileUser.firstName }} is offering</b>
+                 <ul class="seekings">
+                          <!-- <li v-for="offering in eventData.profileUser.offerings" :key="offering">
+                           {{offering}}
+                           </li> -->
+                 </ul>                       
+                 </li>           
+                 </ul>
+                 
+            </div>
+           
+        </div>
+       
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+  <app-footerpartial></app-footerpartial>
+</div>

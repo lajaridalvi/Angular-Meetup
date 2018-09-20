@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #fff;
+  -webkit-box-shadow: 0px -10px 7px 13px rgba(204,204,204,1);
+  -moz-box-shadow: 0px -10px 7px 13px rgba(204,204,204,1);
+  box-shadow: 0px -10px 7px 13px rgba(204,204,204,1);
+}
+.profile-image-container {
+  background: url("https://demos.subinsb.com/isl-profile-pic/image/person.png")
+    no-repeat;
+}
+.media-object {
+  height: 30px;
+  width: 30px;
+}
+.navbar-expand-lg {
+  box-shadow: 1px 1px lightgrey;
+}
+img {
+  width: 40px;
+  height: 30px;
+}
+.initials {
+  /* border: 1px solid grey; */
+  border-radius: 50%;
+  padding: 14px 10px;
+  color: black;
+  font-weight: bold;
+}

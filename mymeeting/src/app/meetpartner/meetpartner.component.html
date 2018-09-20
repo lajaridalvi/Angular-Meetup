@@ -1,0 +1,47 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+ <app-dashboardpartial></app-dashboardpartial>
+ <app-event-partial></app-event-partial>
+
+
+<div class="container-fluid">
+     <div class="row page-container">
+         <div class="col-12">
+            <!-- {{result.users}} -->
+            <div *ngFor=" let user of user.users" class="row mt-3">
+
+                 <div class="col-12 col-md-10 offset-md-1 px-0">
+                     <div class="card cards-row py-3">
+                         <div class="container-fluid">
+                             <div class="row"></div>
+                     
+                          <div class="card-column float-left text-left">
+                             <div  class="profile-image-container">
+                                 <div class="profile-picture img-fluid">
+                                     <img :src="" alt="">
+                                 </div>
+                             </div>
+                             <div  class="profile-image-container">
+                                 <div class="profile-picture img-fluid">
+                                         <h1 class="grey-initials"><b>{{ user.user.firstName.charAt(0).toUpperCase()}} </b><b>{{ user.user.lastName.charAt(0).toUpperCase()}}</b></h1>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="card-column float-left text-center">
+                             <!-- <p><b>{{ user.user.firstName }}</b></p> -->
+                             <p>{{ user.user.firstName }} {{ user.user.lastName }}</p>
+                             <p>{{ user.user.jobTitle }} @ {{ user.user.companyName }}</p>
+                         </div>
+                        
+                     </div>
+                 </div>  
+             </div>
+         </div>
+         </div></div>
+
+
+
+
+</div>
+ <app-footerpartial></app-footerpartial>
+</div>

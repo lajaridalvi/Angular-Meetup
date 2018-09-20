@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px){
+
+  .page-container {
+      font-size: 0.7em;
+  }
+  .profile-image-container {
+      width: 80px;
+      height: 80px;
+      padding: 0.25rem;
+      border-radius: 5px;
+  }
+ 
+  .btn-sm {
+      font-size: .65rem;
+  }
+  .cards-row {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  .search-row {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+}
+.joined {
+  margin-top: 90px;
+  font-size: 0.9em;
+  color: #ddd;
+}
+.grey-initials {
+  color: #ddd;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding-top: 1em;
+  padding-bottom: 1.2em;
+}

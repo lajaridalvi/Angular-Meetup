@@ -1,0 +1,68 @@
+.space {
+    padding: 2% 5%;
+  }
+  .space1 {
+    padding: 2% 12%;
+  }
+  .margin {
+    margin-top: 10px;
+  }
+  .image-logo {
+    width: 150px;
+    padding: 2%;
+    border-radius: 15px;
+  }
+  .btn {
+    border-radius: 5px;
+  }
+  .titles {
+    list-style-type: none;
+    white-space: nowrap;
+  }
+  .seeking-title::before {
+    content: "•";
+    color: purple;
+    font-size: 20px;
+  }
+  .seekings {
+    list-style-type: disc;
+  }
+  .bigtext {
+    font-size: 20px;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1274px) {
+    .show-on-tablet {
+      text-align: center;
+    }
+  }
+  @media only screen and (min-width: 1274px) {
+    .show-on-tablet {
+      text-align: left;
+    }
+  }
+  @media only screen and (min-width: 320px) and (max-width: 425px) {
+    .show-on-mobile {
+      width: 80px;
+      height: 80px;
+      padding: 0.25rem;
+      border-radius: 5px;
+    }
+    .show-on-mobile-text {
+      font-size: 0.7em;
+    }
+    .on-mobile_button {
+      font-size: 0.65rem !important;
+      margin-left: -23px;
+    }
+    .on-mobile_button_offer_seek{
+        margin-left: 0;
+      font-size: 0.65rem !important;
+  
+    }
+    .card-row {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+  }

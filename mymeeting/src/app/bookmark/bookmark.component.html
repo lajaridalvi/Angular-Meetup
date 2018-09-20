@@ -1,0 +1,125 @@
+<div>
+  <app-headerpartial></app-headerpartial>
+  <app-dashboardpartial></app-dashboardpartial>
+ <app-event-partial></app-event-partial >
+
+  <div class="container-fluid">
+      <div class="row page-container">
+          <div class="col-10 offset-1 col-lg-8 offset-lg-2">            
+               <div class="row margin search-row d-none">
+                  <div class="col-12 col-md-10 offset-md-1 px-0">
+                      <input type="text" class="form-control" placeholder="Search (name, company or title)">
+                  </div>
+              </div>
+     <div class="row margin">
+                  <div class="col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-6 float-left px-0">
+                      <div class="btn-group">
+                        <button class="btn sort-button btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Sorted by
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button" [routerLink]="['/web/thisEvent']" >All</button>
+                            <button class="dropdown-item" type="button"  [routerLink]="['/web/newest']">Newest</button>
+                            <button class="dropdown-item" type="button" [routerLink]="['/web/matches']">Matches</button>
+                          </div>
+                      </div>
+                      </div>
+              </div>
+      <div class="row margin"*ngFor="let bookmarkuser of event.users">
+
+          <div class="col-lg-10 col-12 col-md-10 offset-md-1 offset-lg-1 px-0 show-on-desktop">
+                      <div class="card cards-row py-3">
+                          <div class="container-fluid">
+                              <div class="row">
+              
+               <div class="col-4 float-left text-left">
+                             
+                              <div class="profile-image-container mr-2">
+                      
+                      <div class="profile-picture img-fluid">
+                          <h1 class="grey-initials"><b>{{ bookmarkuser.user.firstName.charAt(0).toUpperCase()}}</b><b> {{ bookmarkuser.user.lastName.charAt(0).toUpperCase() }}</b></h1>
+                      </div>
+                  </div>
+                  <div class="profile-image-container">
+                      <img class="img-fluid profile-picture rounded-circle" :src="" alt="" srcset="">
+                  </div>
+                </div>
+              <div class="col-4 float-left">
+                 <p><b>{{ bookmarkuser.user.firstName }} {{ bookmarkuser.user.lastName }}</b></p>
+                 <p>{{ bookmarkuser.user.jobTitle }} @ {{ bookmarkuser.user.companyName }} </p>
+              </div>
+              <div class="col-4 text-right float-right">
+                  <p class="cp" (click)="remove(bookmarkuser.user._id)"> Remove <i  class="fa fa-trash" ></i></p>
+                  <p class="cp" (click)="bookmarkuser(bookmarkuser.user._id)"> Bookmark <i class="fas fa-star"></i></p>
+                  <p><button class="btn-sm btn-success">Meet/Chat</button></p>
+                  <p> <button class="btn-sm btn-success">Suggest Meeting</button> </p>
+                <span class="cp" (click)="viewprofile(bookmarkuser.user._id)">View Profile <i class="fas fa-arrow-right"></i></span>
+              </div>
+              </div>
+          </div>  
+            </div>
+      </div>
+
+      
+      <div class="col-lg-10 col-12 col-md-10 offset-md-1 offset-lg-1 px-0 show-on-mobile d-none">
+                  <div class="card cards-row py-3">
+                          <div class="container-fluid">
+                              <div class="row">
+                      
+                          <div class="col-md-4 col-5 float-left text-left">
+                              <div class="profile-image-container mr-1">
+                                 
+                                  <div class="profile-picture img-fluid">
+                                      <h1 class="grey-initials">{{ bookmarkuser.user.firstName.charAt(0) }} {{ bookmarkuser.user.lastName.charAt(0) }}</h1>
+                                  </div>
+                              </div>
+                              <div class="profile-image-container mr-1" >
+                                  <img class="img-fluid profile-picture rounded-circle" :src="" alt="" srcset="">
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-5 text-left">
+                              <p><b>{{ bookmarkuser.user.firstName }} {{ bookmarkuser.user.lastName }} </b></p>
+                              <p>{{ bookmarkuser.user.jobTitle }} @ {{ bookmarkuser.user.companyName }} </p>
+                          </div>
+                          <div class="col-md-4 col-2 text-right float-right">
+                            <p><i  class="fa fa-trash" (click)="remove(bookmarkuser.user._id)"></i></p>
+                            <p> <i class="fas fa-star" (click)="bookmarkuser(bookmarkuser.user._id)"  ></i></p>
+                             <span><i class="fas fa-arrow-right" (click)="viewprofile(bookmarkuser.user._id)"></i> </span>
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text-center">
+                                <span class="mobile-joined text-left d-none mb-2"> Joined about {{ bookmarkuser.displayTimeFrom }}. </span>
+                                <button class="btn btn-sm btn-success">Meet/Chat</button>
+                                <button  class="btn btn-sm btn-success">Suggest Meeting</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>  
+              </div>
+
+      </div>
+
+      <div class="row margin" *ngIf="event.users.length == 0"> 
+        <div class="col-12">
+          <h5 class="text-center">No Attendees Found</h5>
+          <p class="text-center" >Invite Attendees</p>
+        </div>
+      </div>
+      <div class="row margin">
+          <div class="col-6 col-md-5 offset-md-1 px-0">
+              <button class="btn-sm btn-success">
+                  <i class="fas fa-arrow-left"></i>
+              </button>
+          </div>
+          <div class="col-6 col-md-5 px-0 text-right">
+              <button class="btn-sm btn-success">
+                  <i class="fas fa-arrow-right"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<app-footerpartial></app-footerpartial>  
+</div>

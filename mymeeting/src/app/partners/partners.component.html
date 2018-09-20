@@ -1,0 +1,49 @@
+<div>
+    <app-headerpartial></app-headerpartial>
+    <!-- <app-dashboardPartial></app-dashboardPartial> -->
+     <app-event-partial></app-event-partial>
+     <div class="container-fluid" >
+         <div  *ngFor="let partner of partners;" class="row hide-on-mobile margin">
+             <div class="col-12 col-lg-10 offset-lg-1 px-0">
+             <div class="card ">
+                 <div class="card-content">
+                     <div class="col-7 col-md-5 col-lg-5 col-xs-7 float-left">
+                         <img *ngIf="partner.companyImg" class="image-logo w-50" [src] = "'http://localhost:3001' + partner.companyImg" />
+                     </div>
+                     <div class="col-5 col-md-7 col-lg-7 col-xs-5 float-right text-center margin">
+                         <!-- {{partner.companyImg}} -->
+                         <p><b>{{partner.companyName}}</b></p>
+                         <p><i class="fab fa-facebook r-margin"></i><i class="fab fa-linkedin r-margin"></i><i class="fab fa-twitter-square r-margin"></i><i class="fas fa-globe r-margin"></i></p>
+                        <p class="text cp" (click)="meetpartner(partner.companyName)">Meet this Partner</p>
+    
+                     </div>
+                 </div>
+    
+             </div>
+         </div>
+    </div>
+         <div *ngFor="let partner of partners;" class="row show-on-mobile margin">
+             <div class="col-12 px-0">
+             <div class="card show-mobile-card">
+                 <div class="card-content">
+                     <div class="col-7 col-md-5 col-lg-4 col-xs-7 float-left">
+                         <img class="image-logo w-75" src="http://www.gannett-cdn.com/experiments/usatoday/responsive/2017/06/faces-of-pride/assets/img/portraits/14_illinois.jpg"/>
+                     </div>
+                     <div class="col-5 col-md-7 col-lg-8 col-xs-5 float-right text-center margin">
+                         <p><b>{{partner.companyName}}</b></p>
+                         <p><i class="fab fa-facebook r-margin"></i><i class="fab fa-linkedin r-margin"></i><i class="fab fa-twitter-square r-margin"></i><i class="fas fa-globe r-margin"></i></p>
+                        <a><p class="text cp" (click)="meetpartner(partner.companyName)">Meet this Partner</p></a>
+    
+                     </div>
+                 </div>
+                </div>
+             </div>
+         </div>
+    
+         <!-- <div>
+       <a routerLink="/web/addPartner"> <button class="btn-sm btn-success mx-auto d-block my-3 w-25" >Add Partner</button></a>
+         </div> -->
+     </div>
+        <app-footerpartial></app-footerpartial>
+    
+        </div>

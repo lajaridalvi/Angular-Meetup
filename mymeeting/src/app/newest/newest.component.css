@@ -1,0 +1,99 @@
+.profile-picture {
+    height: 150px;
+  }
+  .card-content {
+    padding: 2%;
+    text-align: left;
+  }
+  .margin {
+    margin-top: 20px;
+  }
+  .form-control {
+    border-radius: 5px;
+  }
+  @media screen and (min-width: 501px) and (max-width: 768px) {
+    .profile-image-container {
+      padding: 0.25rem;
+      border-radius: 5px;
+    }
+    .grey-initials {
+      padding-top: 0.7em !important;
+      padding-bottom: 0.7em !important;
+      width: 120px !important;
+      height: 120px;
+    }
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .profile-picture {
+      height: 120px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .show-on-mobile {
+      display: block !important;
+    }
+    .show-on-desktop {
+      display: none !important;
+    }
+    .joined {
+      font-size: 0.9em;
+      display: none;
+    }
+    .mobile-joined {
+      display: block !important;
+    }
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .grey-initials {
+      padding-top: 0.5em !important;
+      padding-bottom: 1em !important;
+      width: 80px !important;
+      height: 80px;
+    }
+    .btn-sm {
+      font-size: 0.65rem;
+    }
+    .profile-picture {
+      height: 80px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .dp {
+      max-width: 80px;
+    }
+  }
+  .joined {
+    margin-top: 90px;
+    font-size: 0.9em;
+    color: #ddd;
+  }
+  .modal-dialog {
+    max-width: 700px;
+  }
+  .btn-purple {
+    background-color: #e56fcf;
+    color: white;
+  }
+  .grey-initials {
+    color: #ddd;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding-top: 1em;
+    padding-bottom: 1.2em;
+  }
+  .sort-button {
+    border-radius: 5px;
+  }
+  .cp {
+    cursor: pointer;
+  }
+  .dp {
+    max-width: 150px
+  }
